@@ -1,0 +1,89 @@
+# ==========================================================
+# 사이트 기본 정보 (자유롭게 수정하세요)
+# ==========================================================
+title: "바이브코딩 개발일지"
+subtitle: "입학사정관, 코드로 업무를 만들다"
+name: &name "elfinnani"
+description: >-
+  입학사정관으로서 바이브코딩(AI와 함께하는 개발)을 통해
+  업무용 시스템을 직접 만들어가는 과정을 기록하는 개발일지입니다.
+locale: "ko-KR"
+lang: "ko"
+
+# GitHub Pages 배포 주소 (저장소 이름이 blog 이므로 baseurl은 /blog)
+url: "https://elfinnani-byte.github.io"
+baseurl: "/blog"
+repository: "elfinnani-byte/blog"
+
+# ==========================================================
+# 테마 설정 (Minimal Mistakes - remote_theme 방식, 별도 빌드 불필요)
+# ==========================================================
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default" # default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise 중 선택 가능
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+
+# ==========================================================
+# 작성자 정보
+# ==========================================================
+author:
+  name: *name
+  avatar: # "/assets/images/bio-photo.jpg" 처럼 프로필 사진 경로를 넣을 수 있어요
+  bio: "입학사정관 · 바이브코딩으로 업무 자동화 시스템을 만듭니다."
+  location: "Korea"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/elfinnani-byte"
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/elfinnani-byte"
+
+# ==========================================================
+# 목록 / 글 설정
+# ==========================================================
+paginate: 10
+paginate_path: /page:num/
+words_per_minute: 200
+
+defaults:
+  # 모든 글(_posts)에 공통 적용되는 설정
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+  # 고정 페이지(_pages)에 공통 적용되는 설정
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+include:
+  - _pages
+
+markdown: kramdown

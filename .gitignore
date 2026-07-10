@@ -1,0 +1,14 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Obsidian (개인 노트 앱 설정, 저장소에 불필요)
+.obsidian/

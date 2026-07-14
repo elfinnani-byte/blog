@@ -1,0 +1,19 @@
+---
+---
+
+@charset "utf-8";
+
+// Pretendard 웹폰트
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
+// 전체 폰트 & 크기 오버라이드 (테마 기본값보다 작게)
+$doc-font-size: 14;
+
+$sans-serif: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$sans-serif-narrow: $sans-serif;
+$global-font-family: $sans-serif;
+$header-font-family: $sans-serif;
+$serif: $sans-serif;
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials

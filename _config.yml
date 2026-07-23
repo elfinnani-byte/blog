@@ -83,6 +83,10 @@ tag_archive:
   type: liquid
   path: /tags/
 
+# 다크모드 토글 스크립트 (head에 로드, main.min.js는 그대로 유지됨)
+head_scripts:
+  - /assets/js/theme-toggle.js
+
 include:
   - _pages
 

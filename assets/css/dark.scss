@@ -6,7 +6,7 @@
 // Pretendard 웹폰트
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
 
-// 전체 폰트 & 크기 오버라이드
+// 전체 폰트 & 크기 오버라이드 (main.scss와 동일하게 유지)
 $doc-font-size: 11;
 
 $sans-serif: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -16,18 +16,15 @@ $header-font-family: $sans-serif;
 $serif: $sans-serif;
 $monospace: $sans-serif;
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
-@import "custom-overrides"; // 다크모드 토글 · 카테고리/태그 pill 등 커스텀 스타일
+// 다크모드 토글용 스타일시트이므로 site.minimal_mistakes_skin 설정과 무관하게 dark 스킨 고정
+@import "minimal-mistakes/skins/dark";
+@import "minimal-mistakes";
+@import "custom-overrides";
 
-// ----------------------------------------------------------------
-// 본문 기본 크기는 11px로 고정 (화면 크기별 자동 확대 비활성화)
-// ----------------------------------------------------------------
 html {
   font-size: 11px !important;
 }
 
-// 헤딩은 본문 크기와 별도로 지정
 h1 { font-size: 24px !important; }
 h2 { font-size: 20px !important; }
 h3 { font-size: 18px !important; }

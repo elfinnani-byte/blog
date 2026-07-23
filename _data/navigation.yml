@@ -7,3 +7,5 @@ main:
     url: /categories/
   - title: "태그"
     url: /tags/
+  - title: "아카이브"
+    url: /archive/

@@ -1,7 +1,7 @@
 ---
 title: "2026-07-20-01-DB기초-SQL-NoSQL-CRUD"
 date: 2026-07-20
-categories: [VibeCoding, Database]
+categories: [DB·Todo앱 실습]
 tags: [데이터베이스, SQL, NoSQL, CRUD, 바이브코딩]
 ---
 

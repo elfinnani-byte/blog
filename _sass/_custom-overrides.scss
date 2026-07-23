@@ -1,0 +1,59 @@
+// ==========================================================
+// 다크모드 토글 버튼
+// ==========================================================
+.theme-toggle {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5em;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// ==========================================================
+// 카테고리 · 태그를 pill 형태로 표시
+// ==========================================================
+.page__taxonomy,
+.list__item .page__taxonomy,
+.archive__item .page__taxonomy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4em;
+  margin: 0.5em 0;
+
+  strong {
+    display: none; // "Categories:" / "Tags:" 라벨 대신 아이콘만 노출
+  }
+
+  > i,
+  strong > i {
+    display: none;
+  }
+}
+
+.page__taxonomy-item {
+  display: inline-block;
+  padding: 0.15em 0.8em;
+  border-radius: 999px;
+  background-color: var(--pill-bg, rgba(0, 0, 0, 0.06));
+  font-size: 0.85em;
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--pill-bg-hover, rgba(0, 0, 0, 0.12));
+  }
+}
+
+.page__taxonomy .sep {
+  display: none; // pill 형태에서는 쉼표 구분자 불필요
+}
+
+html.dark-mode {
+  --pill-bg: rgba(255, 255, 255, 0.1);
+  --pill-bg-hover: rgba(255, 255, 255, 0.18);
+}

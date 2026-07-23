@@ -1,5 +1,7 @@
 ---
 title: "description 한 줄 고치는 데 반나절이 걸린 이유"
+categories:
+  - 개발 회고
 tags:
   - 스킬엔지니어링
   - ClaudeCode

@@ -7,7 +7,7 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
 
 // 전체 폰트 & 크기 오버라이드 (main.scss와 동일하게 유지)
-$doc-font-size: 11;
+$doc-font-size: 16;
 
 $sans-serif: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $sans-serif-narrow: $sans-serif;
@@ -22,7 +22,7 @@ $monospace: $sans-serif;
 @import "custom-overrides";
 
 html {
-  font-size: 11px !important;
+  font-size: 16px !important;
 }
 
 h1 { font-size: 24px !important; }

@@ -41,7 +41,7 @@
   padding: 0.15em 0.8em;
   border-radius: 999px;
   background-color: var(--pill-bg, rgba(0, 0, 0, 0.06));
-  font-size: 0.85em;
+  font-size: 13px; // 시간(읽는 시간 · 날짜) 폰트 크기와 동일
   text-decoration: none;
 
   &:hover {
@@ -56,4 +56,56 @@
 html.dark-mode {
   --pill-bg: rgba(255, 255, 255, 0.1);
   --pill-bg-hover: rgba(255, 255, 255, 0.18);
+}
+
+// ==========================================================
+// 다크모드: 배경 전체 블랙
+// ==========================================================
+html.dark-mode,
+html.dark-mode body {
+  background-color: #000 !important;
+}
+
+html.dark-mode .page__footer {
+  background-color: #000 !important;
+}
+
+// ==========================================================
+// 포스트 목록: 카드로 묶기
+// ==========================================================
+.list__item {
+  margin-bottom: 1.5em;
+}
+
+.list__item .archive__item {
+  padding: 1.25em 1.5em;
+  border-radius: 12px;
+  background-color: var(--card-bg, #fff);
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+html.dark-mode {
+  --card-bg: #141414;
+  --card-border: rgba(255, 255, 255, 0.08);
+}
+
+// ==========================================================
+// 포스트 목록: 제목 / 시간 / 설명 크기 조정
+// ==========================================================
+
+// 제목: 한 단계 작게
+.archive__item-title {
+  font-size: 18px !important;
+}
+
+// 시간(읽는 시간 · 날짜): 한 단계 크게
+.list__item .page__meta {
+  font-size: 13px !important;
+}
+
+// 설명(발췌): light 굵기, 한 단계 크게
+.archive__item-excerpt {
+  font-size: 18px !important;
+  font-weight: 300 !important;
 }

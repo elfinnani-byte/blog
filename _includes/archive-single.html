@@ -26,7 +26,7 @@
       {% endif %}
     </h2>
     {% include page__meta.html locale=locale type=include.type %}
-    {% include post-taxonomy-pills.html %}
     {% if post.excerpt %}<p class="archive__item-excerpt p-summary" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+    {% include post-taxonomy-pills.html %}
   </article>
 </div>

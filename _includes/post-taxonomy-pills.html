@@ -1,7 +1,7 @@
 {% comment %}
   post 목록(archive-single.html)에서 카테고리/태그를 pill로 보여주기 위한 include.
   page__taxonomy.html은 page.tags/page.categories를 참조하기 때문에
-  {% for post in ... %} 루프 안에서는 (page가 목록 페이지 자신을 가리켜) 동작하지 않아 별도로 만듦.
+  목록 루프 안에서는 (page가 목록 페이지 자신을 가리켜) 동작하지 않아 별도로 만듦.
 {% endcomment %}
 {% if post.categories.size > 0 or post.tags.size > 0 %}
   <p class="page__taxonomy">

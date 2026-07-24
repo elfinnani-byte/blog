@@ -30,9 +30,9 @@
     {% endif %}
     <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       {% if post.link %}
-        <a href="{{ post.link }}" class="card-stretch-link"><i class="far fa-file-alt title-icon" aria-hidden="true"></i> <span class="title-text">{{ title }}</span>{% if is_new %} <span class="new-badge">NEW</span>{% endif %}</a> <a class="u-url" href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        <a href="{{ post.link }}" class="card-stretch-link"><svg class="title-icon" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1"><path d="M3.5 1.5h6l3 3v10a1 1 0 0 1-1 1h-8a1 1 0 0 1-1-1v-12a1 1 0 0 1 1-1z"></path><path d="M9.5 1.5v3h3"></path><line x1="5" y1="8" x2="11" y2="8"></line><line x1="5" y1="10.5" x2="11" y2="10.5"></line></svg> <span class="title-text">{{ title }}</span>{% if is_new %} <span class="new-badge">NEW</span>{% endif %}</a> <a class="u-url" href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
       {% else %}
-        <a class="u-url card-stretch-link" href="{{ post.url | relative_url }}" rel="permalink"><i class="far fa-file-alt title-icon" aria-hidden="true"></i> <span class="title-text">{{ title }}</span>{% if is_new %} <span class="new-badge">NEW</span>{% endif %}</a>
+        <a class="u-url card-stretch-link" href="{{ post.url | relative_url }}" rel="permalink"><svg class="title-icon" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1"><path d="M3.5 1.5h6l3 3v10a1 1 0 0 1-1 1h-8a1 1 0 0 1-1-1v-12a1 1 0 0 1 1-1z"></path><path d="M9.5 1.5v3h3"></path><line x1="5" y1="8" x2="11" y2="8"></line><line x1="5" y1="10.5" x2="11" y2="10.5"></line></svg> <span class="title-text">{{ title }}</span>{% if is_new %} <span class="new-badge">NEW</span>{% endif %}</a>
       {% endif %}
     </h2>
     {% include page__meta.html locale=locale type=include.type %}

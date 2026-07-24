@@ -60,13 +60,7 @@ layout: default
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
-      <footer class="page__meta">
-        {% if site.data.ui-text[locale].meta_label %}
-          <h4 class="page__meta-title">{{ site.data.ui-text[locale].meta_label }}</h4>
-        {% endif %}
-        {% include page__taxonomy.html locale=locale %}
-        {% include page__date.html locale=locale %}
-      </footer>
+      <!-- 하단 카테고리/태그/작성일 푸터는 제거 (상단 메타에 이미 표시됨) -->
 
       {% if page.share %}{% include social-share.html locale=locale %}{% endif %}
 

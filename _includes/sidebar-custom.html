@@ -27,6 +27,19 @@
           {% endcase %}
           {{ link.title }}
         </a>
+        {% if link.title == "Categories" and site.categories.size > 0 %}
+          <ul class="sidebar-nav__sublist">
+            {% assign category_names = site.categories | sort %}
+            {% for category in category_names %}
+              <li>
+                <a href="{{ site.category_archive.path | relative_url }}#{{ category[0] | slugify }}">
+                  <svg class="nav-icon" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1.5 3.5a1 1 0 0 1 1-1h3.2l1.4 1.6h6.4a1 1 0 0 1 1 1v7.4a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1z"></path></svg>
+                  {{ category[0] }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>

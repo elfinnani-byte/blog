@@ -32,7 +32,7 @@
     {% if document.categories.size > 0 and include.type != "grid" %}
       <span class="page__meta-sep"></span>
       <span class="page__meta-category">
-        <i class="fas fa-folder-open" aria-hidden="true"></i>
+        <svg class="nav-icon" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1.5 3.5a1 1 0 0 1 1-1h3.2l1.4 1.6h6.4a1 1 0 0 1 1 1v7.4a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1z"></path></svg>
         {% assign categories_sorted = document.categories | sort_natural %}
         {% for cat in categories_sorted %}<a href="{{ site.category_archive.path | relative_url }}#{{ cat | slugify }}">{{ cat }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
       </span>

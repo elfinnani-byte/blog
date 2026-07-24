@@ -221,11 +221,19 @@ a:hover {
 
   .theme-toggle__icon {
     display: flex;
+
+    svg {
+      transition: stroke-width 0.15s ease;
+    }
   }
 
   &:hover {
     .theme-toggle__icon {
       color: var(--accent);
+
+      svg {
+        stroke-width: 2.5;
+      }
     }
   }
 
@@ -431,9 +439,11 @@ html.dark-mode .new-badge {
   a {
     position: relative;
     z-index: 2;
+    text-decoration: none;
 
     &:hover {
       color: var(--accent);
+      text-decoration: none;
     }
   }
 }

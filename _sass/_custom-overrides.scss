@@ -15,6 +15,17 @@
 }
 
 // ==========================================================
+// 강조색 (라이트 · 다크 공통 — 배경/텍스트 기본색만 테마별로 다름)
+// ==========================================================
+:root {
+  --accent: #1457ff;
+  --card-border-hover: rgba(20, 87, 255, 0.5);
+  --tag-border: rgba(20, 87, 255, 0.3);
+  --tag-bg: rgba(20, 87, 255, 0.06);
+  --tag-text: inherit;
+}
+
+// ==========================================================
 // 카테고리 · 태그를 pill 형태로 표시
 // ==========================================================
 .page__taxonomy,
@@ -42,12 +53,15 @@
   display: inline-block;
   padding: 0.15em 0.8em;
   border-radius: 999px;
-  background-color: var(--pill-bg, rgba(0, 0, 0, 0.06));
-  font-size: 13px;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid var(--tag-border);
+  font-size: 11px;
+  font-weight: 700;
   text-decoration: none;
 
   &:hover {
-    background-color: var(--pill-bg-hover, rgba(0, 0, 0, 0.12));
+    background-color: var(--pill-bg-hover, rgba(20, 87, 255, 0.12));
   }
 }
 
@@ -55,13 +69,8 @@
   display: none; // pill 형태에서는 쉼표 구분자 불필요
 }
 
-html.dark-mode {
-  --pill-bg: rgba(255, 255, 255, 0.1);
-  --pill-bg-hover: rgba(255, 255, 255, 0.18);
-}
-
 // ==========================================================
-// 다크모드: 배경 · 강조색
+// 다크모드: 배경 · 강조색 관련 값 재정의
 // ==========================================================
 html.dark-mode,
 html.dark-mode body {
@@ -73,20 +82,10 @@ html.dark-mode .page__footer {
 }
 
 html.dark-mode {
-  --accent: #1457ff;
   --card-bg: #040b14;
   --card-border: rgba(255, 255, 255, 0.08);
-  --card-border-hover: rgba(20, 87, 255, 0.5);
-  --tag-border: rgba(55, 180, 255, 0.3);
-}
-
-// 다크모드에서는 태그 배지를 블랙 배경 + 강조색 테두리로, 크기는 한 단계 작고 볼드하게
-html.dark-mode .page__taxonomy-item {
-  background-color: #000;
-  color: #9a9a9a;
-  border: 1px solid var(--tag-border);
-  font-size: 11px;
-  font-weight: 700;
+  --tag-bg: #000;
+  --tag-text: #9a9a9a;
 }
 
 // ==========================================================
@@ -108,11 +107,11 @@ html.dark-mode .page__taxonomy-item {
 
 .list__item .archive__item:hover {
   transform: translateY(-3px);
+  border-color: var(--card-border-hover);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 html.dark-mode .list__item .archive__item:hover {
-  border-color: var(--card-border-hover);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
@@ -145,10 +144,17 @@ html.dark-mode .list__item .archive__item:hover {
 // ==========================================================
 .archive__item-title {
   font-size: 18px !important; // 한 단계 작게
+  font-weight: 400 !important; // 볼드 제거
 
   .title-icon {
     margin-right: 0.15em;
+    font-weight: 400;
   }
+}
+
+.list__item .archive__item:hover .title-text {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 html.dark-mode .archive__item-title a.card-stretch-link,
@@ -158,11 +164,6 @@ html.dark-mode .archive__item-title a.card-stretch-link:visited {
 
 html.dark-mode .archive__item-title .title-icon {
   color: #f2f2f2;
-}
-
-html.dark-mode .list__item .archive__item:hover .title-text {
-  color: var(--accent);
-  text-decoration: underline;
 }
 
 // 라이트 모드 기본값 (다크모드가 아닐 때도 배지가 깨져 보이지 않도록)
@@ -175,7 +176,7 @@ html.dark-mode .list__item .archive__item:hover .title-text {
   letter-spacing: 0.06em;
   padding: 0.2em 0.65em;
   border-radius: 999px;
-  background: #1457ff;
+  background: var(--accent);
   color: #fff;
 }
 
@@ -208,8 +209,23 @@ html.dark-mode .new-badge {
   }
 }
 
-// 설명(발췌): light 굵기, 한 단계 작게
+// 설명(발췌): light 굵기, 한 단계 작게, 2줄까지만 표시
 .archive__item-excerpt {
   font-size: 14px !important;
   font-weight: 300 !important;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+// 다크모드: 날짜·시간·카테고리 줄과 설명은 제목보다 흐린 색으로
+html.dark-mode .list__item .page__meta,
+html.dark-mode .list__item .page__meta a {
+  color: #8f8f8f;
+}
+
+html.dark-mode .archive__item-excerpt {
+  color: #d2d2d2;
 }

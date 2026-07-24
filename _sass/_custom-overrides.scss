@@ -30,8 +30,9 @@
     gap: 0.5em;
     background: transparent;
     color: inherit;
-    font-size: 13.6px;
-    font-weight: 650;
+    // h4 {font-size:17px !important} 전역 규칙(main.scss)을 이겨야 해서 !important 필요
+    font-size: 13.6px !important;
+    font-weight: 650 !important;
     line-height: 1.5;
     padding: 0;
     margin: 0;

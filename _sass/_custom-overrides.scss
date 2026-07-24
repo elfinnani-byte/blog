@@ -103,11 +103,27 @@ html.dark-mode .page__taxonomy-item {
   background-color: var(--card-bg, #fff);
   border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.list__item .archive__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 html.dark-mode .list__item .archive__item:hover {
   border-color: var(--card-border-hover);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list__item .archive__item {
+    transition: border-color 0.15s ease;
+  }
+
+  .list__item .archive__item:hover {
+    transform: none;
+  }
 }
 
 // 카드 전체를 클릭 가능하게 만드는 스트레치 링크

@@ -66,6 +66,7 @@ defaults:
       related: true
       toc: true
       toc_sticky: true
+      toc_icon: "list-ul"
   # 고정 페이지(_pages)에 공통 적용되는 설정
   - scope:
       path: ""

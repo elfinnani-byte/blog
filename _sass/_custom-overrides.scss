@@ -157,6 +157,16 @@ html.dark-mode .list__item .archive__item:hover {
   text-decoration: underline;
 }
 
+// 라이트 모드 기본값: 제목 · 아이콘 블랙
+.archive__item-title a.card-stretch-link,
+.archive__item-title a.card-stretch-link:visited {
+  color: #000;
+}
+
+.archive__item-title .title-icon {
+  color: #000;
+}
+
 html.dark-mode .archive__item-title a.card-stretch-link,
 html.dark-mode .archive__item-title a.card-stretch-link:visited {
   color: #f2f2f2;

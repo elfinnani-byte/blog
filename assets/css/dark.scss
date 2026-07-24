@@ -3,13 +3,10 @@
 
 @charset "utf-8";
 
-// Pretendard 웹폰트
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
-
-// 전체 폰트 & 크기 오버라이드 (main.scss와 동일하게 유지)
+// 전체 폰트 & 크기 오버라이드 (main.scss와 동일하게 유지, 레퍼런스: chictimin.github.io/blog)
 $doc-font-size: 16;
 
-$sans-serif: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
 $sans-serif-narrow: $sans-serif;
 $global-font-family: $sans-serif;
 $header-font-family: $sans-serif;
@@ -25,9 +22,9 @@ html {
   font-size: 16px !important;
 }
 
-h1 { font-size: 24px !important; }
-h2 { font-size: 20px !important; }
-h3 { font-size: 18px !important; }
-h4 { font-size: 16px !important; }
-h5 { font-size: 14px !important; }
-h6 { font-size: 13px !important; }
+h1 { font-size: 30px !important; font-weight: 600 !important; }
+h2 { font-size: 22px !important; font-weight: 600 !important; }
+h3 { font-size: 19px !important; font-weight: 600 !important; }
+h4 { font-size: 17px !important; font-weight: 600 !important; }
+h5 { font-size: 15px !important; font-weight: 600 !important; }
+h6 { font-size: 14px !important; font-weight: 600 !important; }

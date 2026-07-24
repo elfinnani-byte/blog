@@ -17,10 +17,12 @@
   document.addEventListener("DOMContentLoaded", function () {
     var btn = document.getElementById("theme-toggle");
     if (!btn) return;
-    var icon = btn.querySelector("i");
+    var sunIcon = btn.querySelector(".theme-toggle__icon--sun");
+    var moonIcon = btn.querySelector(".theme-toggle__icon--moon");
 
     function updateIcon(dark) {
-      if (icon) icon.className = dark ? "fas fa-sun" : "fas fa-moon";
+      if (sunIcon) sunIcon.style.display = dark ? "none" : "";
+      if (moonIcon) moonIcon.style.display = dark ? "" : "none";
     }
 
     updateIcon(isDark);

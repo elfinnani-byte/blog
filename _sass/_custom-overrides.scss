@@ -17,11 +17,15 @@
   width: 100%;
   padding: 0.6em 1em;
   background: #1a1a1a;
-  color: #fff;
-  border: none;
+  color: var(--accent);
+  border: 2px solid var(--accent);
   border-radius: 999px;
   font-size: 13px;
   cursor: pointer;
+
+  i {
+    color: var(--accent);
+  }
 
   span {
     flex: 1;

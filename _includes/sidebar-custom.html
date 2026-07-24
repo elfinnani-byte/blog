@@ -1,13 +1,8 @@
 {% comment %}
-  다크모드 토글 + 전체 메뉴(Home/About/Categories/Tags/Archive)를 왼쪽 사이드바에 세로로 표시.
+  전체 메뉴(Home/About/Categories/Tags/Archive)를 왼쪽 사이드바에 세로로 표시.
+  다크모드 토글 버튼은 author-profile.html의 이름 옆으로 이동함.
   아이콘은 얇은 라인 스타일 인라인 SVG.
 {% endcomment %}
-<!-- 다크모드 토글 버튼: assets/js/theme-toggle.js 에서 클릭 핸들러 연결 -->
-<button id="theme-toggle" class="theme-toggle sidebar-theme-toggle" type="button">
-  <span class="visually-hidden">Toggle dark mode</span>
-  <i class="fas fa-moon"></i>
-</button>
-
 <nav class="sidebar-nav" aria-label="Primary navigation">
   <ul class="sidebar-nav__list">
     {% for link in site.data.navigation.main %}

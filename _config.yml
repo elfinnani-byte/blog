@@ -36,10 +36,7 @@ author:
   avatar: # "/assets/images/bio-photo.jpg" 처럼 프로필 사진 경로를 넣을 수 있어요
   bio: "입학사정관 · 바이브코딩으로 업무 자동화 시스템을 만듭니다."
   location: "Korea"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/elfinnani-byte"
+  # 사이드바(좌측 상단) GitHub 링크는 제거 - 하단 footer의 GitHub 링크만 유지
 
 footer:
   links:

@@ -15,6 +15,31 @@
 }
 
 // ==========================================================
+// 상단 메뉴: 롤오버 시 밑줄 얇게 + 강조색 (텍스트·밑줄 모두)
+// ==========================================================
+.greedy-nav a:hover {
+  color: var(--accent) !important;
+}
+
+.greedy-nav .visible-links a::before {
+  height: 1px !important;
+  background: var(--accent) !important;
+}
+
+// 모바일 햄버거 버튼도 강조색으로
+.navicon,
+.navicon::before,
+.navicon::after {
+  background: var(--accent) !important;
+}
+
+.greedy-nav__toggle:hover .navicon,
+.greedy-nav__toggle:hover .navicon::before,
+.greedy-nav__toggle:hover .navicon::after {
+  background: var(--accent) !important;
+}
+
+// ==========================================================
 // 강조색 (라이트 · 다크 공통 — 배경/텍스트 기본색만 테마별로 다름)
 // ==========================================================
 :root {
@@ -22,6 +47,7 @@
   --card-border-hover: rgba(20, 87, 255, 0.5);
   --tag-bg: #eceef1;
   --tag-text: #57606a;
+  --tag-border: rgba(20, 87, 255, 0.25);
 }
 
 // ==========================================================
@@ -54,7 +80,7 @@
   border-radius: 999px;
   background-color: var(--tag-bg);
   color: var(--tag-text);
-  border: none; // 테마 기본값(border: 1px solid ...)을 명시적으로 제거
+  border: 1px solid var(--tag-border);
   font-size: 11px;
   font-weight: 400;
   text-decoration: none;

@@ -2,7 +2,12 @@
 // 사이드바 "Blog" 세로 메뉴 (카테고리/태그/아카이브)
 // ==========================================================
 .blog-menu {
+  display: none; // 상단 "Blog" 클릭 전에는 아예 숨김
   margin-top: 1.5em;
+}
+
+.blog-menu.is-open {
+  display: block;
 }
 
 .blog-menu__toggle {

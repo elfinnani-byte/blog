@@ -20,8 +20,8 @@
 :root {
   --accent: #1457ff;
   --card-border-hover: rgba(20, 87, 255, 0.5);
-  --tag-border: rgba(20, 87, 255, 0.3);
-  --tag-text: #767676;
+  --tag-bg: #eceef1;
+  --tag-text: #57606a;
 }
 
 // ==========================================================
@@ -52,16 +52,11 @@
   display: inline-block;
   padding: 0.15em 0.8em;
   border-radius: 999px;
-  background-color: transparent;
+  background-color: var(--tag-bg);
   color: var(--tag-text);
-  border: 1px solid var(--tag-border);
   font-size: 11px;
   font-weight: 400;
   text-decoration: none;
-
-  &:hover {
-    background-color: rgba(20, 87, 255, 0.08);
-  }
 }
 
 .page__taxonomy .sep {
@@ -88,7 +83,8 @@ html.dark-mode .greedy-nav {
 html.dark-mode {
   --card-bg: #040b14;
   --card-border: rgba(255, 255, 255, 0.08);
-  --tag-text: #6e6e6e;
+  --tag-bg: #000;
+  --tag-text: #9a9a9a;
 }
 
 // ==========================================================
@@ -147,7 +143,7 @@ html.dark-mode .list__item .archive__item:hover {
 // ==========================================================
 .archive__item-title {
   font-size: 18px !important; // 한 단계 작게
-  font-weight: 400 !important; // 볼드 제거
+  font-weight: 700 !important;
 
   .title-icon {
     margin-right: 0.15em;

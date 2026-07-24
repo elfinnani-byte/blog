@@ -1,11 +1,16 @@
 main:
-  - title: "홈"
+  - title: "Home"
     url: /
-  - title: "소개"
+    icon: "fas fa-house"
+  - title: "About"
     url: /about/
-  - title: "카테고리"
+    icon: "fas fa-circle-info"
+  - title: "Categories"
     url: /categories/
-  - title: "태그"
+    icon: "fas fa-folder"
+  - title: "Tags"
     url: /tags/
-  - title: "아카이브"
+    icon: "fas fa-tag"
+  - title: "Archive"
     url: /archive/
+    icon: "fas fa-box-archive"

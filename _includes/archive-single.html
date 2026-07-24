@@ -11,6 +11,16 @@
   {% assign title = post.title %}
 {% endif %}
 
+{% comment %} 최근 N일 이내에 올라온 글이면 제목 옆에 NEW 배지 표시 {% endcomment %}
+{% assign new_badge_days = 3 %}
+{% assign now_epoch = site.time | date: "%s" | plus: 0 %}
+{% assign post_epoch = post.date | date: "%s" | plus: 0 %}
+{% assign days_since = now_epoch | minus: post_epoch | divided_by: 86400 %}
+{% assign is_new = false %}
+{% if post.date and days_since <= new_badge_days %}
+  {% assign is_new = true %}
+{% endif %}
+
 <div class="{{ include.type | default: 'list' }}__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
     {% if include.type == "grid" and teaser %}
@@ -20,9 +30,9 @@
     {% endif %}
     <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a class="u-url" href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        <a href="{{ post.link }}" class="card-stretch-link"><i class="far fa-file-alt title-icon" aria-hidden="true"></i> <span class="title-text">{{ title }}</span>{% if is_new %} <span class="new-badge">NEW</span>{% endif %}</a> <a class="u-url" href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
       {% else %}
-        <a class="u-url" href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+        <a class="u-url card-stretch-link" href="{{ post.url | relative_url }}" rel="permalink"><i class="far fa-file-alt title-icon" aria-hidden="true"></i> <span class="title-text">{{ title }}</span>{% if is_new %} <span class="new-badge">NEW</span>{% endif %}</a>
       {% endif %}
     </h2>
     {% include page__meta.html locale=locale type=include.type %}

@@ -63,6 +63,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
+      show_date: true
       comments: false
       share: true
       related: true
@@ -89,5 +90,9 @@ head_scripts:
 
 include:
   - _pages
+
+# 빌드 시 제외할 폴더 (digital garden 비공개 메모)
+exclude:
+  - garden
 
 markdown: kramdown

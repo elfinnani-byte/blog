@@ -37,11 +37,13 @@
 }
 
 .page__taxonomy-item {
+  position: relative; // 카드 전체 클릭(스트레치 링크) 위에서도 개별 클릭 가능하도록
+  z-index: 2;
   display: inline-block;
   padding: 0.15em 0.8em;
   border-radius: 999px;
   background-color: var(--pill-bg, rgba(0, 0, 0, 0.06));
-  font-size: 13px; // 시간(읽는 시간 · 날짜) 폰트 크기와 동일
+  font-size: 13px;
   text-decoration: none;
 
   &:hover {
@@ -59,53 +61,139 @@ html.dark-mode {
 }
 
 // ==========================================================
-// 다크모드: 배경 전체 블랙
+// 다크모드: 배경 · 강조색
 // ==========================================================
 html.dark-mode,
 html.dark-mode body {
-  background-color: #000 !important;
+  background-color: #05070d !important;
 }
 
 html.dark-mode .page__footer {
-  background-color: #000 !important;
+  background-color: #05070d !important;
+}
+
+html.dark-mode {
+  --accent: #1457ff;
+  --card-bg: #040b14;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-border-hover: rgba(20, 87, 255, 0.5);
+  --tag-border: rgba(55, 180, 255, 0.3);
+}
+
+// 다크모드에서는 태그 배지를 블랙 배경 + 강조색 테두리로, 크기는 한 단계 작고 볼드하게
+html.dark-mode .page__taxonomy-item {
+  background-color: #000;
+  color: #9a9a9a;
+  border: 1px solid var(--tag-border);
+  font-size: 11px;
+  font-weight: 700;
 }
 
 // ==========================================================
-// 포스트 목록: 카드로 묶기
+// 포스트 목록: 카드로 묶기 + 전체 클릭 가능
 // ==========================================================
 .list__item {
   margin-bottom: 1.5em;
 }
 
 .list__item .archive__item {
+  position: relative; // 스트레치 링크(::after)의 기준점
   padding: 1.25em 1.5em;
   border-radius: 12px;
   background-color: var(--card-bg, #fff);
   border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.15s ease;
 }
 
-html.dark-mode {
-  --card-bg: #141414;
-  --card-border: rgba(255, 255, 255, 0.08);
+html.dark-mode .list__item .archive__item:hover {
+  border-color: var(--card-border-hover);
+}
+
+// 카드 전체를 클릭 가능하게 만드는 스트레치 링크
+// (태그/카테고리 링크는 z-index 2로 그 위에서 독립적으로 클릭 가능)
+.card-stretch-link {
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
 }
 
 // ==========================================================
-// 포스트 목록: 제목 / 시간 / 설명 크기 조정
+// 포스트 목록: 제목 앞 아이콘 · NEW 배지
 // ==========================================================
-
-// 제목: 한 단계 작게
 .archive__item-title {
-  font-size: 18px !important;
+  font-size: 18px !important; // 한 단계 작게
+
+  .title-icon {
+    margin-right: 0.15em;
+  }
 }
 
-// 시간(읽는 시간 · 날짜): 한 단계 크게
+html.dark-mode .archive__item-title a.card-stretch-link,
+html.dark-mode .archive__item-title a.card-stretch-link:visited {
+  color: #f2f2f2;
+}
+
+html.dark-mode .archive__item-title .title-icon {
+  color: #f2f2f2;
+}
+
+html.dark-mode .list__item .archive__item:hover .title-text {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+// 라이트 모드 기본값 (다크모드가 아닐 때도 배지가 깨져 보이지 않도록)
+.new-badge {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.2em 0.65em;
+  border-radius: 999px;
+  background: #1457ff;
+  color: #fff;
+}
+
+html.dark-mode .new-badge {
+  // 반투명 배경 - 카드의 어두운 배경 위에 자연스럽게 겹쳐 보임
+  background: rgba(20, 87, 255, 0.18);
+  backdrop-filter: blur(6px) saturate(160%);
+  -webkit-backdrop-filter: blur(6px) saturate(160%);
+  border: 1px solid var(--accent);
+  color: #8aabff; // 강조색 + 흰색을 섞은 밝은 톤 (가독성용)
+  box-shadow:
+    0 0 4px rgba(20, 87, 255, 0.85),
+    0 0 10px rgba(20, 87, 255, 0.5),
+    inset 0 0 6px rgba(20, 87, 255, 0.25);
+}
+
+// ==========================================================
+// 포스트 목록: 시간 · 카테고리 메타, 설명 크기 조정
+// ==========================================================
+
+// 시간(읽는 시간 · 날짜) · 카테고리: 한 단계 크게
 .list__item .page__meta {
   font-size: 13px !important;
 }
 
-// 설명(발췌): light 굵기, 한 단계 크게
+.page__meta-category {
+  a {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// 설명(발췌): light 굵기, 한 단계 작게
 .archive__item-excerpt {
-  font-size: 18px !important;
+  font-size: 14px !important;
   font-weight: 300 !important;
 }

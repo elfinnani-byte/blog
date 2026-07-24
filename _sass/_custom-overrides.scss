@@ -22,6 +22,7 @@
     &::before {
       content: "# ";
       color: var(--accent);
+      font-weight: 400 !important; // 전역 h2/h3 볼드(!important)를 이겨야 함
       opacity: 0;
       transition: opacity 0.15s ease;
     }

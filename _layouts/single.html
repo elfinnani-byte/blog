@@ -60,7 +60,12 @@ layout: default
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
-      <!-- 하단 카테고리/태그/작성일 푸터는 제거 (상단 메타에 이미 표시됨) -->
+      <!-- 하단 카테고리/작성일 푸터는 제거하되(상단 메타에 이미 표시됨), 태그는 유지 -->
+      {% if page.tags.size > 0 %}
+        <div class="post-tags-footer">
+          {% include tag-list.html locale=locale %}
+        </div>
+      {% endif %}
 
       {% if page.share %}{% include social-share.html locale=locale %}{% endif %}
 

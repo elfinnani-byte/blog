@@ -5,12 +5,6 @@ main:
   - title: "About"
     url: /about/
     icon: "fas fa-circle-info"
-  - title: "Categories"
-    url: /categories/
-    icon: "fas fa-folder"
-  - title: "Tags"
-    url: /tags/
-    icon: "fas fa-tag"
-  - title: "Archive"
-    url: /archive/
-    icon: "fas fa-box-archive"
+  - title: "Blog"
+    url: "#blog-menu"
+    icon: "fas fa-blog"

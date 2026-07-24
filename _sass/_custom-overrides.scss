@@ -1,4 +1,66 @@
 // ==========================================================
+// 사이드바 "Blog" 세로 메뉴 (카테고리/태그/아카이브)
+// ==========================================================
+.blog-menu {
+  margin-top: 1.5em;
+}
+
+.blog-menu__toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  width: 100%;
+  padding: 0.6em 1em;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+
+  span {
+    flex: 1;
+    text-align: left;
+  }
+
+  .blog-menu__chevron {
+    transition: transform 0.2s ease;
+    font-size: 11px;
+  }
+}
+
+.blog-menu.is-open .blog-menu__toggle .blog-menu__chevron {
+  transform: rotate(180deg);
+}
+
+.blog-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    padding: 0.7em 0.5em;
+    text-decoration: none;
+    color: inherit;
+    font-size: 13px;
+  }
+}
+
+.blog-menu.is-open .blog-menu__list {
+  max-height: 220px;
+}
+
+// ==========================================================
 // 다크모드 토글 버튼
 // ==========================================================
 .theme-toggle {

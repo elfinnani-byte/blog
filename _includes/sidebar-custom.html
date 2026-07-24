@@ -1,0 +1,16 @@
+{% comment %}
+  상단 메뉴의 "Blog" 클릭 시 여기(사이드바)에 세로 메뉴로 카테고리/태그/아카이브를 보여줌.
+  토글 동작은 assets/js/blog-menu.js 참고.
+{% endcomment %}
+<nav id="blog-menu" class="blog-menu">
+  <button class="blog-menu__toggle" type="button" aria-expanded="false" aria-controls="blog-menu-list">
+    <i class="fas fa-bars" aria-hidden="true"></i>
+    <span>Category</span>
+    <i class="fas fa-chevron-down blog-menu__chevron" aria-hidden="true"></i>
+  </button>
+  <ul id="blog-menu-list" class="blog-menu__list">
+    <li><a href="{{ '/categories/' | relative_url }}"><i class="fas fa-folder" aria-hidden="true"></i> Categories</a></li>
+    <li><a href="{{ '/tags/' | relative_url }}"><i class="fas fa-tag" aria-hidden="true"></i> Tags</a></li>
+    <li><a href="{{ '/archive/' | relative_url }}"><i class="fas fa-box-archive" aria-hidden="true"></i> Archive</a></li>
+  </ul>
+</nav>

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var trigger = document.querySelector('a[href="#blog-menu"]');
+  var trigger = document.querySelector('a[href$="#blog-menu"]');
   var menu = document.getElementById("blog-menu");
   if (!trigger || !menu) return;
 

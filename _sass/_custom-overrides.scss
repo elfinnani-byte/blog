@@ -21,8 +21,7 @@
   --accent: #1457ff;
   --card-border-hover: rgba(20, 87, 255, 0.5);
   --tag-border: rgba(20, 87, 255, 0.3);
-  --tag-bg: rgba(20, 87, 255, 0.06);
-  --tag-text: inherit;
+  --tag-text: #767676;
 }
 
 // ==========================================================
@@ -53,15 +52,15 @@
   display: inline-block;
   padding: 0.15em 0.8em;
   border-radius: 999px;
-  background-color: var(--tag-bg);
+  background-color: transparent;
   color: var(--tag-text);
   border: 1px solid var(--tag-border);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 400;
   text-decoration: none;
 
   &:hover {
-    background-color: var(--pill-bg-hover, rgba(20, 87, 255, 0.12));
+    background-color: rgba(20, 87, 255, 0.08);
   }
 }
 
@@ -84,8 +83,7 @@ html.dark-mode .page__footer {
 html.dark-mode {
   --card-bg: #040b14;
   --card-border: rgba(255, 255, 255, 0.08);
-  --tag-bg: #000;
-  --tag-text: #9a9a9a;
+  --tag-text: #6e6e6e;
 }
 
 // ==========================================================

@@ -80,6 +80,11 @@ html.dark-mode .page__footer {
   background-color: #05070d !important;
 }
 
+html.dark-mode #site-nav,
+html.dark-mode .greedy-nav {
+  background: transparent !important;
+}
+
 html.dark-mode {
   --card-bg: #040b14;
   --card-border: rgba(255, 255, 255, 0.08);

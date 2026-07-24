@@ -1,9 +1,58 @@
 // ==========================================================
-// 개별 글 화면: TOC 헤더 · 인용구 · 본문 링크 호버도 강조색(블루)로 통일
-// (기존엔 테마 기본 $primary-color를 그대로 써서 티얼 색으로 나오고 있었음)
+// 개별 글 화면: TOC(목차) 카드 스타일로 재설계
+// 테마 기본은 진한 색 헤더 바 + 촘촘한 구분선 목록 -> 카드형 + 여백 + 활성 항목 강조로 변경
 // ==========================================================
-.toc .nav__title {
-  background: var(--accent);
+.toc {
+  font-family: inherit;
+  background-color: var(--card-bg, #fff);
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+
+  .nav__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    background: transparent;
+    color: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0.9em 1em;
+
+    i {
+      color: var(--accent);
+    }
+  }
+
+  .active a {
+    background: rgba(20, 87, 255, 0.1);
+    border-inline-start: 3px solid var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+}
+
+.toc__menu {
+  padding: 0.5em;
+
+  a {
+    padding: 0.5em 0.75em;
+    border-bottom: none;
+    border-radius: 8px;
+    font-weight: 400;
+    color: inherit;
+
+    &:hover {
+      background: rgba(20, 87, 255, 0.06);
+      color: inherit;
+    }
+  }
+
+  li ul > li a {
+    opacity: 0.8;
+    font-size: 0.95em;
+  }
 }
 
 blockquote {

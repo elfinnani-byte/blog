@@ -12,17 +12,7 @@
           {{ site.masthead_title | default: site.title | escape_once | strip }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
         </a>
-        <ul class="visible-links">
-          {%- for link in site.data.navigation.main -%}
-            <li class="masthead__menu-item">
-              <a
-                href="{{ link.url | relative_url }}"
-                {% if link.description %} title="{{ link.description }}"{% endif %}
-                {% if link.target %} target="{{ link.target }}"{% endif %}
-              >{% if link.icon %}<i class="{{ link.icon }}" aria-hidden="true"></i> {% endif %}{{ link.title }}</a>
-            </li>
-          {%- endfor -%}
-        </ul>
+        <!-- 상단 메뉴는 왼쪽 사이드바(sidebar-custom.html)로 이동함 -->
         <!-- 다크모드 토글 버튼: assets/js/theme-toggle.js 에서 클릭 핸들러 연결 -->
         <button id="theme-toggle" class="theme-toggle" type="button">
           <span class="visually-hidden">Toggle dark mode</span>
@@ -34,11 +24,6 @@
           <i class="fas fa-search"></i>
         </button>
         {% endif %}
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[locale].menu_label | default: "Toggle menu" }}</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>

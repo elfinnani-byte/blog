@@ -1,13 +1,41 @@
 // ==========================================================
-// 사이드바 "Blog" 세로 메뉴 (카테고리/태그/아카이브)
+// 사이드바 전체 메뉴 (Home / About / Blog)
 // ==========================================================
-.blog-menu {
-  display: none; // 상단 "Blog" 클릭 전에는 아예 숨김
-  margin-top: 1.5em;
+.sidebar-nav {
+  margin-bottom: 1.5em;
 }
 
-.blog-menu.is-open {
-  display: block;
+.sidebar-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav__item {
+  margin: 0;
+
+  > a {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    padding: 0.6em 0.2em;
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+.nav-icon {
+  flex: none;
+  vertical-align: -2px;
+}
+
+.blog-menu {
+  margin-top: 0.25em;
 }
 
 .blog-menu__toggle {
@@ -23,7 +51,7 @@
   font-size: 13px;
   cursor: pointer;
 
-  i {
+  .nav-icon {
     color: var(--accent);
   }
 
@@ -34,7 +62,6 @@
 
   .blog-menu__chevron {
     transition: transform 0.2s ease;
-    font-size: 11px;
   }
 }
 

@@ -54,9 +54,15 @@
   border-radius: 999px;
   background-color: var(--tag-bg);
   color: var(--tag-text);
+  border: none; // 테마 기본값(border: 1px solid ...)을 명시적으로 제거
   font-size: 11px;
   font-weight: 400;
   text-decoration: none;
+
+  &:hover {
+    // 테마 기본 :hover 색상(color: #a9dde0)도 명시적으로 무력화
+    color: var(--tag-text);
+  }
 }
 
 .page__taxonomy .sep {

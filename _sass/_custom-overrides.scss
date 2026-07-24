@@ -208,7 +208,7 @@ html.dark-mode .archive__item-title .title-icon {
   color: #f2f2f2;
 }
 
-// 라이트 모드 기본값 (다크모드가 아닐 때도 배지가 깨져 보이지 않도록)
+// 유리(glassmorphism) 스타일 - 라이트 · 다크 모드 공통
 .new-badge {
   position: relative;
   z-index: 2;
@@ -218,21 +218,19 @@ html.dark-mode .archive__item-title .title-icon {
   letter-spacing: 0.06em;
   padding: 0.2em 0.65em;
   border-radius: 999px;
-  background: var(--accent);
-  color: #fff;
-}
-
-html.dark-mode .new-badge {
-  // 반투명 배경 - 카드의 어두운 배경 위에 자연스럽게 겹쳐 보임
   background: rgba(20, 87, 255, 0.18);
   backdrop-filter: blur(6px) saturate(160%);
   -webkit-backdrop-filter: blur(6px) saturate(160%);
   border: 1px solid var(--accent);
-  color: #8aabff; // 강조색 + 흰색을 섞은 밝은 톤 (가독성용)
+  color: var(--accent); // 라이트 모드: 옅은 유리 배경 위에서 진한 강조색으로 가독성 확보
   box-shadow:
     0 0 4px rgba(20, 87, 255, 0.85),
     0 0 10px rgba(20, 87, 255, 0.5),
     inset 0 0 6px rgba(20, 87, 255, 0.25);
+}
+
+html.dark-mode .new-badge {
+  color: #8aabff; // 다크 모드: 어두운 유리 배경 위에서는 밝은 톤이 더 잘 보임
 }
 
 // ==========================================================

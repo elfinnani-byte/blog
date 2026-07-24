@@ -1,48 +1,33 @@
 {% comment %}
-  전체 메뉴(Home/About/Blog)를 상단 대신 왼쪽 사이드바에 세로로 표시.
-  Blog는 클릭 시 Categories/Tags/Archive를 펼치는 하위 메뉴 (assets/js/blog-menu.js).
-  아이콘은 FontAwesome 대신 얇은 라인 스타일 인라인 SVG 사용.
+  다크모드 토글 + 전체 메뉴(Home/About/Categories/Tags/Archive)를 왼쪽 사이드바에 세로로 표시.
+  아이콘은 얇은 라인 스타일 인라인 SVG.
 {% endcomment %}
+<!-- 다크모드 토글 버튼: assets/js/theme-toggle.js 에서 클릭 핸들러 연결 -->
+<button id="theme-toggle" class="theme-toggle sidebar-theme-toggle" type="button">
+  <span class="visually-hidden">Toggle dark mode</span>
+  <i class="fas fa-moon"></i>
+</button>
+
 <nav class="sidebar-nav" aria-label="Primary navigation">
   <ul class="sidebar-nav__list">
-    <li class="sidebar-nav__item">
-      <a href="{{ '/' | relative_url }}">
-        <svg class="nav-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1.5 7.5 8 2l6.5 5.5"></path><path d="M3.5 6.5V14h9V6.5"></path><path d="M6.5 14v-4h3v4"></path></svg>
-        Home
-      </a>
-    </li>
-    <li class="sidebar-nav__item">
-      <a href="{{ '/about/' | relative_url }}">
-        <svg class="nav-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6.3"></circle><line x1="8" y1="7.2" x2="8" y2="11"></line><circle cx="8" cy="4.9" r="0.9" fill="currentColor" stroke="none"></circle></svg>
-        About
-      </a>
-    </li>
-    <li class="sidebar-nav__item blog-menu">
-      <button class="blog-menu__toggle" type="button" aria-expanded="false" aria-controls="blog-menu-list">
-        <svg class="nav-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="2" y1="4.5" x2="14" y2="4.5"></line><line x1="2" y1="8" x2="14" y2="8"></line><line x1="2" y1="11.5" x2="14" y2="11.5"></line></svg>
-        <span>Blog</span>
-        <svg class="nav-icon blog-menu__chevron" viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.3"><polyline points="3,6 8,11 13,6"></polyline></svg>
-      </button>
-      <ul id="blog-menu-list" class="blog-menu__list">
-        <li>
-          <a href="{{ '/categories/' | relative_url }}">
+    {% for link in site.data.navigation.main %}
+      <li class="sidebar-nav__item">
+        <a href="{{ link.url | relative_url }}">
+          {% case link.title %}
+          {% when "Home" %}
+            <svg class="nav-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1.5 7.5 8 2l6.5 5.5"></path><path d="M3.5 6.5V14h9V6.5"></path><path d="M6.5 14v-4h3v4"></path></svg>
+          {% when "About" %}
+            <svg class="nav-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6.3"></circle><line x1="8" y1="7.2" x2="8" y2="11"></line><circle cx="8" cy="4.9" r="0.9" fill="currentColor" stroke="none"></circle></svg>
+          {% when "Categories" %}
             <svg class="nav-icon" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1.5 3.5a1 1 0 0 1 1-1h3.2l1.4 1.6h6.4a1 1 0 0 1 1 1v7.4a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1z"></path></svg>
-            Categories
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/tags/' | relative_url }}">
+          {% when "Tags" %}
             <svg class="nav-icon" viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 2h5.2l6.3 6.3a1 1 0 0 1 0 1.4l-4.8 4.8a1 1 0 0 1-1.4 0L1 8.2V2z"></path><circle cx="5" cy="5" r="0.9" fill="currentColor" stroke="none"></circle></svg>
-            Tags
-          </a>
-        </li>
-        <li>
-          <a href="{{ '/archive/' | relative_url }}">
+          {% when "Archive" %}
             <svg class="nav-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="1.5" y="2" width="13" height="3" rx="0.6"></rect><path d="M2.3 5.5v7a1 1 0 0 0 1 1h9.4a1 1 0 0 0 1-1v-7"></path><line x1="6.3" y1="8" x2="9.7" y2="8"></line></svg>
-            Archive
-          </a>
-        </li>
-      </ul>
-    </li>
+          {% endcase %}
+          {{ link.title }}
+        </a>
+      </li>
+    {% endfor %}
   </ul>
 </nav>

@@ -199,7 +199,11 @@ html.dark-mode .page__inner-wrap > header .page__meta a {
   // .page__content가 float로 떠 있어서, clear 없이는 float 높이를 무시하고
   // 위쪽 빈 공간(TOC 카드 옆)으로 끌려 올라가 렌더링됨
   clear: both;
-  margin-top: 12em;
+  // margin-top이 아니라 padding-top이어야 함: clear로 밀려 내려오는 요소는
+  // "float 아래로 내려오는 데 필요한 만큼"만 내려오고, margin-top은 그 clearance에
+  // 흡수되어 실제 화면에는 반영되지 않음(그래서 2em→12em까지 올려도 화면상 간격이
+  // 전혀 안 늘어났던 것). padding-top은 clearance와 무관하게 내용을 그만큼 밀어내림.
+  padding-top: 12em;
 
   .page__taxonomy strong {
     display: inline-flex !important;

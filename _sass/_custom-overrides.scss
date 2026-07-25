@@ -59,6 +59,9 @@
   background-color: var(--card-bg, #fff);
   border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
   border-radius: 12px;
+  // 본문 배경색이 페이지 배경과 동일(흰색)해 테두리만으로는 잘 안 보여서,
+  // 이미 TOC 카드에 쓰던 것과 동일한 그림자로 카드 느낌을 살림
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 28px 32px;
 
   // 테마가 p, li 등에 line-height를 직접 지정해두어 컨테이너 상속만으로는

@@ -56,11 +56,18 @@
 // .page__content-inner에 적용 — .page__content에 걸면 TOC까지 박스에 갇힘)
 // ==========================================================
 .page__content-inner {
-  line-height: 1.75;
   background-color: var(--card-bg, #fff);
   border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
   border-radius: 12px;
   padding: 28px 32px;
+
+  // 테마가 p, li 등에 line-height를 직접 지정해두어 컨테이너 상속만으로는
+  // 적용되지 않으므로, 각 텍스트 요소에 직접 지정
+  p,
+  li,
+  dd {
+    line-height: 1.75;
+  }
 
   // 참고자료(직접 작성한 목록)와 각주(Kramdown이 자동 생성하는 .footnotes) 사이 구분선
   .footnotes {

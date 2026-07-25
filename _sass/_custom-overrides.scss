@@ -113,9 +113,7 @@
     border-spacing: 0;
     width: 100%;
     margin: 1.5em 0;
-    // 표 테두리는 박스 테두리(--content-box-border)보다 더 연하게 —
-    // 표 너비가 꽉 차니 진하면 훨씬 눈에 띄어서 부담스러움
-    border: 1px solid var(--table-border, #eef0f2);
+    border: 1px solid var(--content-box-border, #e5e7eb);
     border-radius: 12px;
     overflow: hidden;
   }
@@ -126,7 +124,7 @@
     text-align: left;
     font-weight: 600;
     padding: 12px 16px;
-    border-bottom: 1px solid var(--table-border, #eef0f2);
+    border-bottom: 1px solid var(--content-box-border, #e5e7eb);
   }
 
   td {
@@ -550,7 +548,6 @@ html.dark-mode {
   --card-bg: #040b14;
   --card-border: rgba(255, 255, 255, 0.08);
   --content-box-border: #27272a; // 레퍼런스 다크모드 실측값(rgb(39,39,42))
-  --table-border: rgba(255, 255, 255, 0.08); // 표 테두리: 박스 테두리보다 더 연하게
   --tag-bg: #000;
   --tag-text: #9a9a9a;
   --tag-border: rgba(255, 255, 255, 0.3); // 다크 모드: 연한 화이트 (이번 요청은 라이트모드만 조정)

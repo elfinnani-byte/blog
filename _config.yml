@@ -86,6 +86,7 @@ tag_archive:
 head_scripts:
   - /assets/js/theme-toggle.js
   - /assets/js/toc-toggle.js
+  - /assets/js/sidebar-category-active.js
 
 include:
   - _pages

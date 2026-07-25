@@ -172,7 +172,7 @@ html.dark-mode .page__description {
   // .page__content가 float로 떠 있어서, clear 없이는 float 높이를 무시하고
   // 위쪽 빈 공간(TOC 카드 옆)으로 끌려 올라가 렌더링됨
   clear: both;
-  margin-top: 4.5em;
+  margin-top: 6rem;
 
   .page__taxonomy strong {
     display: inline-flex !important;
@@ -182,7 +182,7 @@ html.dark-mode .page__description {
     i {
       display: inline-block !important; // 전역 규칙(.page__taxonomy strong > i {display:none})을 이겨야 함
       font-size: 13px;
-      color: var(--tag-text);
+      color: var(--tag-icon, #9aa0a6); // 배지 테두리처럼 너무 진하지 않게 연하게
     }
   }
 
@@ -397,6 +397,30 @@ a:hover {
   vertical-align: -2px;
 }
 
+// 카테고리 서브메뉴: 기본은 닫힌 폴더, 활성 상태(해당 글을 보고 있거나
+// 카테고리 앵커가 선택된 경우)일 때만 열린 폴더 아이콘으로 전환
+.sidebar-nav__subitem {
+  .icon-folder-open {
+    display: none;
+  }
+
+  &.is-active-category {
+    a {
+      color: var(--accent);
+      font-weight: 700;
+      opacity: 1;
+    }
+
+    .icon-folder-closed {
+      display: none;
+    }
+
+    .icon-folder-open {
+      display: inline-block;
+    }
+  }
+}
+
 // ==========================================================
 // 다크모드 토글 버튼
 // ==========================================================
@@ -451,7 +475,8 @@ a:hover {
   --card-border-hover: rgba(20, 87, 255, 0.5);
   --tag-bg: #fff; // 라이트모드 태그 배지 배경: 화이트
   --tag-text: #57606a;
-  --tag-border: rgba(0, 0, 0, 0.3); // 라이트 모드: 연한 블랙
+  --tag-border: rgba(0, 0, 0, 0.12); // 라이트 모드: 연한 블랙 (0.3은 너무 진했음)
+  --tag-icon: #9aa0a6; // 라이트 모드: 태그 아이콘, 배지 텍스트보다 연하게
 }
 
 // ==========================================================
@@ -517,7 +542,8 @@ html.dark-mode {
   --content-box-border: #27272a; // 레퍼런스 다크모드 실측값(rgb(39,39,42))
   --tag-bg: #000;
   --tag-text: #9a9a9a;
-  --tag-border: rgba(255, 255, 255, 0.3); // 다크 모드: 연한 화이트
+  --tag-border: rgba(255, 255, 255, 0.3); // 다크 모드: 연한 화이트 (이번 요청은 라이트모드만 조정)
+  --tag-icon: #9a9a9a; // 다크 모드는 기존 그대로 유지
 }
 
 // ==========================================================

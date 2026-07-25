@@ -36,7 +36,7 @@ layout: default
             <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
           </h1>
           {%- endif %}
-          {% include page__meta.html locale=locale %}
+          {% include page__meta.html locale=locale open_folder=true %}
           {% if page.description %}
             <p class="page__description">{{ page.description }}</p>
           {% endif %}

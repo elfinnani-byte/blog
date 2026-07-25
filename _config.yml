@@ -94,8 +94,11 @@ head_scripts:
 include:
   - _pages
 
-# 빌드 시 제외할 폴더 (digital garden 비공개 메모)
+# 빌드 시 제외할 폴더/파일 (digital garden 비공개 메모 + 공개 페이지로 만들 의도가 없는 문서)
 exclude:
   - garden
+  - CLAUDE.md
+  - NaniDomain.md
+  - README_초안.md
 
 markdown: kramdown

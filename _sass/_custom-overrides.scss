@@ -23,14 +23,18 @@
     }
   }
 
-  // 레퍼런스처럼 소제목(h2, h3) 앞 "#"은 롤오버 시에만 보이게
-  // (레이아웃이 밀리지 않도록 항상 자리는 차지하되 opacity로만 전환)
+  // 레퍼런스처럼 소제목(h2, h3) 앞 "#"은 롤오버 시에만 보이게.
+  // 인라인로 넣으면 제목 텍스트가 본문(p)보다 오른쪽으로 밀려 정렬이 안 맞아서,
+  // absolute로 왼쪽 여백(박스 padding-left) 안에 고정 — 제목은 항상 본문과 왼쪽 정렬 유지
   h2,
   h3 {
     position: relative;
 
     &::before {
-      content: "# ";
+      content: "#";
+      position: absolute;
+      left: -24px;
+      top: 0;
       color: var(--accent);
       font-weight: 400 !important; // 전역 h2/h3 볼드(!important)를 이겨야 함
       opacity: 0;
@@ -40,6 +44,14 @@
     &:hover::before {
       opacity: 1;
     }
+  }
+}
+
+@media (max-width: 600px) {
+  // 모바일에서는 박스 padding-left가 20px이라 -24px는 테두리 밖으로 넘침
+  .page__content h2::before,
+  .page__content h3::before {
+    left: -14px;
   }
 }
 

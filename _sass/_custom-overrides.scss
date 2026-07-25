@@ -670,6 +670,8 @@ html.dark-mode .archive__item-title .title-icon {
   -webkit-backdrop-filter: blur(6px) saturate(160%);
   border: 1px solid var(--accent);
   color: var(--accent); // 라이트 모드: 옅은 유리 배경 위에서 진한 강조색으로 가독성 확보
+  // 예전엔 blur 반경이 커서 알약 모서리에 이음새처럼 끊겨 보였음 — 훨씬 작게
+  box-shadow: 0 0 2px rgba(20, 87, 255, 0.6);
 }
 
 html.dark-mode .new-badge {

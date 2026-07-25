@@ -17,7 +17,7 @@
 {% assign post_epoch = post.date | date: "%s" | plus: 0 %}
 {% assign days_since = now_epoch | minus: post_epoch | divided_by: 86400 %}
 {% assign is_new = false %}
-{% if post.date and days_since <= new_badge_days %}
+{% if post.date and days_since < new_badge_days %}
   {% assign is_new = true %}
 {% endif %}
 

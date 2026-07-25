@@ -50,6 +50,33 @@
 }
 
 // ==========================================================
+// 본문 영역: 레퍼런스(chictimin.github.io/blog)처럼 카드형 박스 +
+// 넓은 줄 간격(line-height 1.75)
+// (TOC는 본문과 별개의 영역이므로, {{ content }}만 감싸는
+// .page__content-inner에 적용 — .page__content에 걸면 TOC까지 박스에 갇힘)
+// ==========================================================
+.page__content-inner {
+  line-height: 1.75;
+  background-color: var(--card-bg, #fff);
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  border-radius: 12px;
+  padding: 28px 32px;
+
+  // 참고자료(직접 작성한 목록)와 각주(Kramdown이 자동 생성하는 .footnotes) 사이 구분선
+  .footnotes {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  }
+}
+
+@media (max-width: 600px) {
+  .page__content-inner {
+    padding: 20px;
+  }
+}
+
+// ==========================================================
 // 글 하단 태그: "Tags:" 텍스트는 숨기고 아이콘만 보이게
 // (.page__taxonomy strong 전체를 숨기는 전역 규칙 때문에 아이콘까지 같이 사라져서 별도 처리)
 // ==========================================================

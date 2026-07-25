@@ -56,8 +56,10 @@ layout: default
             </nav>
           </aside>
         {% endif %}
-        {{ content }}
-        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        <div class="page__content-inner">
+          {{ content }}
+          {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        </div>
       </section>
 
       <!-- 하단 카테고리/작성일 푸터는 제거하되(상단 메타에 이미 표시됨), 태그는 유지 -->

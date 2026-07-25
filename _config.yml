@@ -51,6 +51,9 @@ paginate: 10
 paginate_path: /page:num/
 words_per_minute: 200
 
+# 빌드 서버 시계가 글 날짜보다 이전이어도 미래 글로 숨기지 않고 바로 게시
+future: true
+
 defaults:
   # 모든 글(_posts)에 공통 적용되는 설정
   - scope:

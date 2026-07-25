@@ -65,6 +65,7 @@
     font-size: 0;
 
     i {
+      display: inline-block !important; // 전역 규칙(.page__taxonomy strong > i {display:none})을 이겨야 함
       font-size: 13px;
       color: var(--tag-text);
     }

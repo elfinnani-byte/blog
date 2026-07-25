@@ -602,7 +602,7 @@ html.dark-mode .list__item .archive__item:hover {
 
 .list__item .archive__item:hover .title-text {
   color: var(--accent);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 // 라이트 모드 기본값: 제목 · 아이콘 블랙

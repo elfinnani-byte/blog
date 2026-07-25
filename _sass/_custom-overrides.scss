@@ -33,7 +33,7 @@
     &::before {
       content: "#";
       position: absolute;
-      left: -24px;
+      left: -15px;
       top: 0;
       color: var(--accent);
       font-weight: 400 !important; // 전역 h2/h3 볼드(!important)를 이겨야 함
@@ -48,10 +48,10 @@
 }
 
 @media (max-width: 600px) {
-  // 모바일에서는 박스 padding-left가 20px이라 -24px는 테두리 밖으로 넘침
+  // 모바일에서는 박스 padding-left가 20px이라 여유가 더 적음
   .page__content h2::before,
   .page__content h3::before {
-    left: -14px;
+    left: -11px;
   }
 }
 

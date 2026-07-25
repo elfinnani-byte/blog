@@ -54,6 +54,9 @@
 // (.page__taxonomy strong 전체를 숨기는 전역 규칙 때문에 아이콘까지 같이 사라져서 별도 처리)
 // ==========================================================
 .post-tags-footer {
+  // .page__content가 float로 떠 있어서, clear 없이는 float 높이를 무시하고
+  // 위쪽 빈 공간(TOC 카드 옆)으로 끌려 올라가 렌더링됨
+  clear: both;
   margin-top: 2em;
 
   .page__taxonomy strong {

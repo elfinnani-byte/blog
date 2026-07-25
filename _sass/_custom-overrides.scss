@@ -203,7 +203,7 @@ html.dark-mode .page__inner-wrap > header .page__meta a {
   // "float 아래로 내려오는 데 필요한 만큼"만 내려오고, margin-top은 그 clearance에
   // 흡수되어 실제 화면에는 반영되지 않음(그래서 2em→12em까지 올려도 화면상 간격이
   // 전혀 안 늘어났던 것). padding-top은 clearance와 무관하게 내용을 그만큼 밀어내림.
-  padding-top: 12em;
+  padding-top: 3em;
 
   .page__taxonomy strong {
     display: inline-flex !important;

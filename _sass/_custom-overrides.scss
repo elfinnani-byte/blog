@@ -118,12 +118,12 @@
     overflow: hidden;
   }
 
-  // 레퍼런스 실측: 헤더 배경 채움 없음, 행 사이 구분선도 없음 —
-  // 헤더 아래 선 하나 + 바깥 박스 테두리만으로 구분
+  // 헤더 아래 선 + 바깥 박스 테두리에 더해, 헤더 행을 옅게 구분
   th {
     text-align: left;
     font-weight: 600;
     padding: 12px 16px;
+    background-color: rgba(0, 0, 0, 0.025);
     border-bottom: 1px solid var(--content-box-border, #e5e7eb);
   }
 
@@ -145,6 +145,10 @@ html.dark-mode .page__content-inner {
   dd code,
   h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
     background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  th {
+    background-color: rgba(255, 255, 255, 0.03);
   }
 }
 

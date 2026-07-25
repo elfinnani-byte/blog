@@ -78,14 +78,13 @@
     line-height: 1.75;
   }
 
-  // 인라인 코드(`...`): 배경은 옅은 회색, 텍스트는 강조색
+  // 인라인 코드(`...`): 배경만 옅은 회색으로, 텍스트 색은 그대로(과하게 튀지 않도록)
   // (코드 블록 ```...```의 pre > code는 제외)
   p code,
   li code,
   dd code,
   h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
     background-color: rgba(0, 0, 0, 0.06);
-    color: var(--accent);
     padding: 0.15em 0.4em;
     border-radius: 4px;
     font-size: 0.9em;
@@ -106,7 +105,8 @@
     text-align: left;
     font-weight: 600;
     padding: 12px 16px;
-    background-color: rgba(0, 0, 0, 0.02);
+    // 0.02는 거의 안 보여서 헤더 행이 눈에 띄도록 진하게
+    background-color: #f6f8fa;
     border-bottom: 1px solid var(--content-box-border, #e5e7eb);
   }
 
@@ -136,7 +136,7 @@ html.dark-mode .page__content-inner {
   }
 
   th {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(255, 255, 255, 0.06);
   }
 }
 
@@ -172,7 +172,7 @@ html.dark-mode .page__description {
   // .page__content가 float로 떠 있어서, clear 없이는 float 높이를 무시하고
   // 위쪽 빈 공간(TOC 카드 옆)으로 끌려 올라가 렌더링됨
   clear: both;
-  margin-top: 3em;
+  margin-top: 4.5em;
 
   .page__taxonomy strong {
     display: inline-flex !important;
@@ -449,8 +449,8 @@ a:hover {
 :root {
   --accent: #1457ff;
   --card-border-hover: rgba(20, 87, 255, 0.5);
-  --tag-bg: #eceef1;
-  --tag-text: #3d434a; // 라이트모드 태그 배지: 좀 더 또렷하게 (기존 #57606a는 너무 흐림)
+  --tag-bg: #fff; // 라이트모드 태그 배지 배경: 화이트
+  --tag-text: #57606a;
   --tag-border: rgba(0, 0, 0, 0.3); // 라이트 모드: 연한 블랙
 }
 

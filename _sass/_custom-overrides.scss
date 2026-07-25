@@ -104,6 +104,11 @@
 
   // 표: 카드와 통일된 테두리 스타일
   table {
+    // 테마 기본값 table{display:block}이 남아있으면 thead/tbody가
+    // 별도의 익명 테이블 박스로 렌더링되어, width:100%를 줘도 실제
+    // 칸(th/td)들은 내용 너비만큼만 차지하고 카드 안에 빈 공간이 남음 —
+    // 진짜 표 레이아웃으로 되돌려 칸이 카드 너비를 꽉 채우도록 함
+    display: table;
     border-collapse: separate;
     border-spacing: 0;
     width: 100%;

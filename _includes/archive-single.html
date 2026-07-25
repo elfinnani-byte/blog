@@ -12,7 +12,7 @@
 {% endif %}
 
 {% comment %} 최근 N일 이내에 올라온 글이면 제목 옆에 NEW 배지 표시 {% endcomment %}
-{% assign new_badge_days = 3 %}
+{% assign new_badge_days = 2 %}
 {% assign now_epoch = site.time | date: "%s" | plus: 0 %}
 {% assign post_epoch = post.date | date: "%s" | plus: 0 %}
 {% assign days_since = now_epoch | minus: post_epoch | divided_by: 86400 %}

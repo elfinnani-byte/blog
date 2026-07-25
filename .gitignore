@@ -12,3 +12,6 @@ Thumbs.db
 
 # Obsidian (개인 노트 앱 설정, 저장소에 불필요)
 .obsidian/
+
+# Digital garden (비공개 메모, 발행 전 초안 - GitHub에 올리지 않음)
+garden/

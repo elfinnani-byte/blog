@@ -1,0 +1,33 @@
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>가든 메모에서 블로그 발행까지의 3단계 흐름</title>
+  <desc>비공개 메모(garden) 단계, 검토 단계, 발행(posts) 단계가 화살표로 연결된 다이어그램</desc>
+  <rect width="700" height="260" fill="#ffffff" />
+
+  <!-- Step 1: garden -->
+  <circle cx="140" cy="110" r="46" fill="#f4f4f4" stroke="#c9c9c9" stroke-width="2"/>
+  <text x="140" y="122" font-size="34" text-anchor="middle">🌱</text>
+  <text x="140" y="180" font-size="16" font-weight="600" text-anchor="middle" fill="#2d2d2d" font-family="sans-serif">garden/ 메모</text>
+  <text x="140" y="202" font-size="13" text-anchor="middle" fill="#767676" font-family="sans-serif">비공개, 자유롭게</text>
+
+  <path d="M 200 110 L 268 110" stroke="#c9c9c9" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: review -->
+  <circle cx="340" cy="110" r="46" fill="#f4f4f4" stroke="#c9c9c9" stroke-width="2"/>
+  <text x="340" y="122" font-size="34" text-anchor="middle">✅</text>
+  <text x="340" y="180" font-size="16" font-weight="600" text-anchor="middle" fill="#2d2d2d" font-family="sans-serif">미리보기 승인</text>
+  <text x="340" y="202" font-size="13" text-anchor="middle" fill="#767676" font-family="sans-serif">제목·카테고리 확인</text>
+
+  <path d="M 400 110 L 468 110" stroke="#c9c9c9" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: publish -->
+  <circle cx="540" cy="110" r="46" fill="#e6f6ea" stroke="#2f9e44" stroke-width="2.5"/>
+  <text x="540" y="122" font-size="34" text-anchor="middle">📝</text>
+  <text x="540" y="180" font-size="16" font-weight="600" text-anchor="middle" fill="#2f9e44" font-family="sans-serif">_posts 발행</text>
+  <text x="540" y="202" font-size="13" text-anchor="middle" fill="#767676" font-family="sans-serif">commit &amp; push</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#c9c9c9"/>
+    </marker>
+  </defs>
+</svg>

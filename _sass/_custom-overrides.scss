@@ -137,6 +137,14 @@
     padding-top: 1.5em;
     border-top: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
   }
+
+  // 본문 이미지: 가운데 정렬 + 본문 너비의 70%
+  img {
+    display: block;
+    margin: 1.5em auto;
+    width: 70%;
+    max-width: 100%;
+  }
 }
 
 html.dark-mode .page__content-inner {

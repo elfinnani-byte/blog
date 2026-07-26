@@ -150,6 +150,7 @@
   img.about-avatar {
     width: 140px;
     height: 140px;
+    margin: 0 0 1.5em; // 위 규칙의 margin: auto를 이겨서 가운데 정렬 대신 왼쪽 정렬
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));

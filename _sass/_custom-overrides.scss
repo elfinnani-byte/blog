@@ -399,6 +399,7 @@ a:hover {
 
   li {
     list-style: none;
+    font-size: 15px !important; // 테마 기본 .sidebar li{font-size:0.75em}을 이겨야 함
   }
 }
 

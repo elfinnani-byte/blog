@@ -472,7 +472,10 @@ a:hover {
   }
 }
 
-.theme-toggle {
+.sidebar-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin: 0.8em 0;
 }
 
@@ -655,6 +658,10 @@ a:hover {
       svg {
         stroke-width: 2.5;
       }
+    }
+
+    i {
+      color: var(--accent);
     }
   }
 

@@ -34,14 +34,8 @@
         </li>
       {% endif %}
 
-      {% if author.email %}
-        <li>
-          <a href="mailto:{{ author.email }}" rel="me" class="u-email">
-            <meta itemprop="email" content="{{ author.email }}" />
-            <i class="fas fa-fw fa-square-envelope" aria-hidden="true"></i><span class="label">{{ site.data.ui-text[locale].email_label | default: "Email" }}</span>
-          </a>
-        </li>
-      {% endif %}
+      <!-- Email 링크는 사이드바 아이콘 줄로 이동해서 여기서는 생략 -->
+
 
       {% if author.keybase %}
         <li>
@@ -107,13 +101,7 @@
         </li>
       {% endif %}
 
-      {% if author.github %}
-        <li>
-          <a href="https://github.com/{{ author.github }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
-          </a>
-        </li>
-      {% endif %}
+      <!-- GitHub 링크는 사이드바 아이콘 줄로 이동해서 여기서는 생략 -->
 
       {% if author.gitlab %}
         <li>

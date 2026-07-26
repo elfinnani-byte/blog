@@ -804,6 +804,7 @@ html.dark-mode .list__item .archive__item:hover {
 .archive__item-title {
   font-size: 18px !important; // 한 단계 작게
   font-weight: 700 !important;
+  line-height: 1.5 !important; // 두 줄로 감길 때 줄 간격이 너무 좁았음
 
   .title-icon {
     margin-right: 0.15em;

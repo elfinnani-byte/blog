@@ -57,6 +57,9 @@ layout: default
               </header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
             </nav>
+            {% if page.id and page.related %}
+              {% include sidebar-related.html %}
+            {% endif %}
           </aside>
         {% endif %}
         <div class="page__content-inner">
@@ -86,11 +89,6 @@ layout: default
     {% endif %}
   </article>
 
-  {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
-  {% if page.id and page.related and site.related_posts.size > 0 %}
-    {% include page__related.html locale=locale posts=site.related_posts %}
-  {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
-  {% elsif page.id and page.related %}
-    {% include page__related.html locale=locale posts=site.posts %}
-  {% endif %}
+  <!-- 관련 글 목록은 하단 대신 오른쪽 사이드바 On this page 카드 아래로 이동함
+       (sidebar-related.html 참고) -->
 </div>

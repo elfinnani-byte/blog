@@ -364,6 +364,58 @@ html.dark-mode .page__inner-wrap > header .page__meta a {
   }
 }
 
+// TOC(On this page) 카드와 동일한 스타일의 카드로, 그 바로 아래에 위치
+.related-widget {
+  font-family: inherit;
+  background-color: var(--card-bg, #fff);
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-top: 1em;
+  transition: border-color 0.15s ease;
+
+  &:hover {
+    border-color: var(--card-border-hover);
+  }
+
+  .nav__title {
+    font-size: 13.6px !important;
+    font-weight: 650 !important;
+    padding: 0;
+    margin: 0 0 12px;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.3em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 0.35em 0.5em;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--tag-text);
+      text-decoration: none !important;
+
+      &:hover {
+        color: var(--accent);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
 blockquote {
   border-inline-start-color: var(--accent);
 }

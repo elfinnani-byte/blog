@@ -1,0 +1,28 @@
+{% comment %}
+  On this page(목차) 카드 아래에 보여줄 관련 글 목록.
+  site.related_posts(LSI 기반)가 비어있으면 site.posts(최신순)로 대체하며,
+  현재 보고 있는 글 자신은 목록에서 제외한다.
+{% endcomment %}
+{% assign related_source = site.related_posts %}
+{% if related_source.size == 0 %}
+  {% assign related_source = site.posts %}
+{% endif %}
+
+{% assign shown = 0 %}
+<div class="related-widget">
+  <h4 class="nav__title">관련 글</h4>
+  <ul class="related-widget__list">
+    {% for post in related_source %}
+      {% if post.url == page.url %}
+        {% continue %}
+      {% endif %}
+      {% if shown >= 4 %}
+        {% break %}
+      {% endif %}
+      {% assign shown = shown | plus: 1 %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

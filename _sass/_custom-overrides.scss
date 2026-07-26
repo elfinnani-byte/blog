@@ -960,6 +960,7 @@ body.layout--categories .page__title,
 body.layout--tags .page__title {
   font-size: 30px !important;
   font-weight: 600 !important;
+  margin-top: 0 !important; // Recent Posts만 위 여백이 더 있었음
   padding-bottom: 0.4em;
   margin-bottom: 1em;
   border-bottom: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));

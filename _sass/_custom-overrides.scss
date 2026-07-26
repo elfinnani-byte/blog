@@ -1009,3 +1009,18 @@ body.layout--tags .page__title {
     color: var(--tag-icon, #9aa0a6);
   }
 }
+
+// 아카이브 페이지의 연도 구분(예: "2026")도 위 카테고리/태그 pill과 동일하게
+// (.archive__subtitle은 홈의 "Recent Posts"에도 쓰이는 클래스라
+// body.layout--archive로 범위를 좁혀서 그쪽엔 영향 없게 함)
+body.layout--archive .archive__subtitle {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 0.3em 0.9em !important;
+  border-radius: 999px;
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  background-color: var(--card-bg, #fff);
+  margin: 1.5em 0 1em !important;
+}

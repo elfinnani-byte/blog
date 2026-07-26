@@ -43,6 +43,10 @@ author:
   email: "elfinnani@gmail.com"
   github: "elfinnani-byte"
   # GitHub/이메일/피드 아이콘은 사이드바 다크모드 토글 옆으로 이동함 (author-profile.html 참고)
+
+# 풋터의 아이콘 줄(Feed 등) 제거 - 위 사이드바 아이콘으로 대체
+atom_feed:
+  hide: true
   # 풋터 아이콘 줄은 제거함
 
 # ==========================================================

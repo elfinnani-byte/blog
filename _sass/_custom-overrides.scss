@@ -379,11 +379,25 @@ html.dark-mode .page__inner-wrap > header .page__meta a {
     border-color: var(--card-border-hover);
   }
 
+  &__header {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  }
+
   .nav__title {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
     font-size: 13.6px !important;
     font-weight: 650 !important;
     padding: 0;
-    margin: 0 0 12px;
+    margin: 0;
+
+    i {
+      color: var(--accent);
+      font-size: 12px;
+    }
   }
 
   &__list {
@@ -402,13 +416,16 @@ html.dark-mode .page__inner-wrap > header .page__meta a {
     a {
       display: block;
       padding: 0.35em 0.5em;
+      border-inline-start: 2px solid transparent;
       border-radius: 4px;
       font-size: 14px;
       font-weight: 400;
       color: var(--tag-text);
       text-decoration: none !important;
+      transition: border-color 0.15s ease, color 0.15s ease;
 
       &:hover {
+        border-inline-start-color: var(--accent);
         color: var(--accent);
         font-weight: 600;
       }

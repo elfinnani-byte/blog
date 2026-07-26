@@ -836,3 +836,32 @@ a {
     outline-offset: 2px;
   }
 }
+
+// ==========================================================
+// 사이드바 너비 축소 + 본문 영역 확대
+// (테마 기본값: 200px/300px. .sidebar와 .page/.archive는 같은 폭을
+// 공유해야 나란히 맞아떨어지므로 항상 짝으로 같이 조정)
+// ==========================================================
+@media (min-width: 64em) {
+  .sidebar {
+    width: calc(170px - 1em);
+  }
+
+  .page,
+  .archive {
+    width: calc(100% - 170px);
+    padding-inline-end: 170px;
+  }
+}
+
+@media (min-width: 80em) {
+  .sidebar {
+    width: calc(240px - 1em);
+  }
+
+  .page,
+  .archive {
+    width: calc(100% - 240px);
+    padding-inline-end: 240px;
+  }
+}

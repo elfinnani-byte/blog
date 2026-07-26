@@ -849,7 +849,8 @@ a {
   }
 
   .page,
-  .archive {
+  .archive,
+  .page__related {
     width: calc(100% - 170px);
     padding-inline-end: 170px;
   }
@@ -861,7 +862,8 @@ a {
   }
 
   .page,
-  .archive {
+  .archive,
+  .page__related {
     width: calc(100% - 240px);
     padding-inline-end: 240px;
   }

@@ -61,6 +61,12 @@
   color: inherit;
 }
 
+// 글 제목이 2줄 이상으로 감길 때 줄 간격이 너무 좁았음 (지금까지 고친 건
+// 홈 목록 카드 제목(.archive__item-title)이었는데, 실제 문제는 이 h1 쪽이었음)
+.page__title {
+  line-height: 1.5 !important;
+}
+
 // ==========================================================
 // 본문 영역: 레퍼런스(chictimin.github.io/blog)처럼 카드형 박스 +
 // 넓은 줄 간격(line-height 1.75)

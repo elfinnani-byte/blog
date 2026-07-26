@@ -645,23 +645,24 @@ a:hover {
 
   .theme-toggle__icon {
     display: flex;
+  }
 
-    svg {
-      transition: stroke-width 0.15s ease;
-    }
+  > svg {
+    display: flex;
+  }
+
+  svg {
+    transition: stroke-width 0.15s ease;
   }
 
   &:hover {
-    .theme-toggle__icon {
+    .theme-toggle__icon,
+    > svg {
       color: var(--accent);
-
-      svg {
-        stroke-width: 2.5;
-      }
     }
 
-    i {
-      color: var(--accent);
+    svg {
+      stroke-width: 2.5;
     }
   }
 

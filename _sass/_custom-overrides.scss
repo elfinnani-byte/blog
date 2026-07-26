@@ -742,7 +742,9 @@ html.dark-mode body {
 }
 
 html.dark-mode .page__footer {
-  background-color: #05070d !important;
+  // body와 완전히 같은 색이라 구분이 안 됐음 - 카드 배경색 + 위쪽 선으로 분리
+  background-color: var(--card-bg, #040b14) !important;
+  border-top: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
 }
 
 html.dark-mode {

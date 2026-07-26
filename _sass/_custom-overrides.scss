@@ -947,3 +947,19 @@ a {
     padding-inline-end: 240px;
   }
 }
+
+// ==========================================================
+// 대메뉴(Home/Categories/Tags/Archive) 상단 제목 스타일 통일
+// (홈의 "Recent Posts"는 h3.archive__subtitle, 나머지는 h1.page__title로
+// 태그/크기가 서로 달랐음 - 크기·굵기·밑줄 모두 동일하게)
+// ==========================================================
+body.layout--home .archive__subtitle,
+body.layout--archive .page__title,
+body.layout--categories .page__title,
+body.layout--tags .page__title {
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  padding-bottom: 0.4em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+}

@@ -21,6 +21,10 @@ repository: "elfinnani-byte/blog"
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "default" # default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise 중 선택 가능
 
+# 사이드바 상시 노출 검색창(Lunr) - _includes/author-profile.html 참고
+search: true
+search_full_content: true
+
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache

@@ -145,6 +145,15 @@
     width: 70%;
     max-width: 100%;
   }
+
+  // About 페이지 프로필 사진: 위 70% 규칙 대신 작은 원형으로
+  img.about-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  }
 }
 
 html.dark-mode .page__content-inner {
@@ -369,6 +378,96 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 0.4em;
+}
+
+// 사이드바 상단 순서: 이름 -> Korea(위치) -> 다크모드 토글 -> 검색창
+.author__urls-wrapper {
+  margin: 0.6em 0;
+}
+
+// Follow 버튼을 없애서 항상 펼쳐서 보여줘야 하므로, 테마 기본값(버튼 클릭 전까지
+// display:none인 드롭다운)을 무력화하고 평범한 목록으로 노출
+.author__urls {
+  display: block !important;
+  position: static !important;
+  margin: 0;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 13px;
+
+  li {
+    list-style: none;
+  }
+}
+
+.theme-toggle {
+  margin: 0.8em 0;
+}
+
+.sidebar-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    position: absolute;
+    left: 12px;
+    color: var(--tag-icon, #9aa0a6);
+    pointer-events: none;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.55em 0.8em 0.55em 2.2em;
+    border-radius: 999px;
+    border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+    background-color: var(--card-bg, #fff);
+    color: inherit;
+    font-size: 13px;
+
+    &::placeholder {
+      color: var(--tag-icon, #9aa0a6);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--card-border-hover);
+    }
+  }
+
+  &__results {
+    margin-top: 0.6em;
+    max-height: 60vh;
+    overflow-y: auto;
+
+    &:empty {
+      display: none;
+    }
+
+    // 좁은 사이드바 폭에 맞춰 카드 여백/글자 크기 축소
+    .list__item {
+      margin-bottom: 0.6em;
+    }
+
+    .archive__item {
+      padding: 0.8em 1em;
+    }
+
+    .archive__item-title {
+      font-size: 14px !important;
+    }
+
+    .archive__item-excerpt {
+      font-size: 12.5px !important;
+    }
+
+    .results__found {
+      font-size: 12px;
+      color: var(--tag-icon, #9aa0a6);
+      margin: 0 0 0.5em;
+    }
+  }
 }
 
 .sidebar-nav {

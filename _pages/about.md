@@ -4,6 +4,10 @@ permalink: /about/
 author_profile: true
 ---
 
+<img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="about-avatar">
+
+**{{ site.author.bio }}**
+
 안녕하세요, 입학사정관으로 일하고 있는 블로그 운영자입니다.
 
 이 블로그는 개발자가 아닌 제가 **바이브코딩(Vibe Coding)** — AI와 대화하며 코드를 작성하는 방식 —

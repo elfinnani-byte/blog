@@ -2,6 +2,7 @@
 title: "About"
 permalink: /about/
 author_profile: true
+classes: about-page
 ---
 
 <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="about-avatar">

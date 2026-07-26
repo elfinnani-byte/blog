@@ -1024,3 +1024,16 @@ body.layout--archive .archive__subtitle {
   background-color: var(--card-bg, #fff);
   margin: 1.5em 0 1em !important;
 }
+
+// About 페이지 제목도 Home/Categories/Tags/Archive와 동일한 스타일로.
+// (h1.page__title은 개별 글 제목에도 쓰이는 클래스라 body.layout--single
+// 전체에 걸면 글 제목까지 밑줄이 생기므로, About 페이지에만
+// classes: about-page(about.md 참고)로 범위를 좁힘)
+body.about-page .page__title {
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  margin-top: 2.5rem !important;
+  padding-bottom: 0.4em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+}

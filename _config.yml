@@ -31,6 +31,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-redirect-from
 
 # ==========================================================
 # 작성자 정보

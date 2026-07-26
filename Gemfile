@@ -8,6 +8,7 @@ gem "jekyll-include-cache"
 gem "jekyll-paginate"
 gem "jekyll-sitemap"
 gem "jekyll-feed"
+gem "jekyll-redirect-from"
 
 group :windows, :jruby do
   gem "tzinfo", ">= 1", "< 3"

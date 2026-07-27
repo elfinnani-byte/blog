@@ -582,8 +582,6 @@ a:hover {
   &.is-active > a {
     color: var(--accent);
     font-weight: 700;
-    border-inline-start: 2px solid var(--accent);
-    padding-inline-start: calc(0.2em - 2px);
   }
 }
 

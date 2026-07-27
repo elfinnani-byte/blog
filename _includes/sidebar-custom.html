@@ -13,9 +13,9 @@
         {% when "About" %}
           {% if page.url == "/about/" %}{% assign is_active_link = true %}{% endif %}
         {% when "Categories" %}
-          {% if page.url == "/categories/" or page.categories.size > 0 %}{% assign is_active_link = true %}{% endif %}
+          {% if page.url == "/categories/" %}{% assign is_active_link = true %}{% endif %}
         {% when "Tags" %}
-          {% if page.url == "/tags/" or page.tags.size > 0 %}{% assign is_active_link = true %}{% endif %}
+          {% if page.url == "/tags/" %}{% assign is_active_link = true %}{% endif %}
         {% when "Archive" %}
           {% if page.url == "/archive/" %}{% assign is_active_link = true %}{% endif %}
       {% endcase %}

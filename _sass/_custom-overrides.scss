@@ -577,6 +577,14 @@ a:hover {
       font-weight: 700;
     }
   }
+
+  // 지금 보고 있는 메뉴 표시 (호버와 동일한 스타일 + 왼쪽 라인으로 고정 강조)
+  &.is-active > a {
+    color: var(--accent);
+    font-weight: 700;
+    border-inline-start: 2px solid var(--accent);
+    padding-inline-start: calc(0.2em - 2px);
+  }
 }
 
 .sidebar-nav__sublist {

@@ -6,7 +6,20 @@
 <nav class="sidebar-nav" aria-label="Primary navigation">
   <ul class="sidebar-nav__list">
     {% for link in site.data.navigation.main %}
-      <li class="sidebar-nav__item">
+      {% assign is_active_link = false %}
+      {% case link.title %}
+        {% when "Home" %}
+          {% if page.url == "/" %}{% assign is_active_link = true %}{% endif %}
+        {% when "About" %}
+          {% if page.url == "/about/" %}{% assign is_active_link = true %}{% endif %}
+        {% when "Categories" %}
+          {% if page.url == "/categories/" or page.categories.size > 0 %}{% assign is_active_link = true %}{% endif %}
+        {% when "Tags" %}
+          {% if page.url == "/tags/" or page.tags.size > 0 %}{% assign is_active_link = true %}{% endif %}
+        {% when "Archive" %}
+          {% if page.url == "/archive/" %}{% assign is_active_link = true %}{% endif %}
+      {% endcase %}
+      <li class="sidebar-nav__item{% if is_active_link %} is-active{% endif %}">
         <a href="{{ link.url | relative_url }}">
           {% case link.title %}
           {% when "Home" %}

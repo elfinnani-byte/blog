@@ -810,7 +810,7 @@ html.dark-mode .list__item .archive__item:hover {
 .archive__item-title {
   font-size: 18px !important; // 한 단계 작게
   font-weight: 700 !important;
-  line-height: 2.3 !important; // 1.5, 1.8도 체감이 안 될 만큼 미세해서 확실히 크게
+  line-height: 1.5 !important; // 2.3까지 올렸던 건 사실 착각(진짜 문제는 글 h1 쪽)이었고, 그 값 때문에 NEW 배지까지 세로로 늘어나 있었음
 
   .title-icon {
     margin-right: 0.15em;
@@ -849,6 +849,7 @@ html.dark-mode .archive__item-title .title-icon {
   display: inline-block;
   font-size: 10px;
   font-weight: 700;
+  line-height: 1.4; // 부모 제목의 line-height를 물려받아 세로로 늘어나지 않도록 고정
   letter-spacing: 0.06em;
   padding: 0.2em 0.65em;
   border-radius: 999px;

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 546" width="100%" style="border-radius: 14px; background: rgb(248, 250, 252);" role="img">
+<title>R-CNN, Fast R-CNN, Faster R-CNN 비교</title>
+<desc>R-CNN 계열이 매번 가장 느린 지점을 찾아 신경망 안으로 흡수시켜온 과정을 세 줄로 비교한 다이어그램. R-CNN은 후보마다 CNN을 2000번 돌리고, Fast R-CNN은 CNN을 1번만 돌리되 후보 찾기는 여전히 Selective Search에 의존하며, Faster R-CNN은 후보 찾기까지 RPN이라는 신경망으로 대체한다.</desc>
+<defs>
+<marker id="ar3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M 2 2 L 8 5 L 2 8" fill="none" stroke="#9aa5b1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+</marker>
+</defs>
+<rect x="1" y="1" width="878" height="544" rx="14" fill="#f8fafc" stroke="#cbd5e1"></rect>
+<text x="34" y="40" fill="#0f172a" font-family="sans-serif" font-size="20" font-weight="700">R-CNN 계열 — 병목을 하나씩 없애다</text>
+<text x="34" y="64" fill="#64748b" font-family="sans-serif" font-size="13">매번 "이번 버전에서 제일 느린 지점"을 찾아 신경망 안으로 흡수시켜 온 흐름입니다.</text>
+
+<!-- Row 1: R-CNN -->
+<text x="34" y="100" fill="#0f172a" font-family="sans-serif" font-size="14" font-weight="700">R-CNN</text>
+<g transform="translate(35,110)">
+<rect width="250" height="95" rx="12" fill="#0B3D59"></rect>
+<text x="125" y="26" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700">Selective Search</text>
+<text x="125" y="48" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11">(신경망 아님)</text>
+<text x="125" y="68" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11">후보 약 2,000개 제안</text>
+</g>
+<path d="M 290 157 H 310" stroke="#9aa5b1" stroke-width="2" marker-end="url(#ar3)"></path>
+<g transform="translate(315,110)">
+<rect width="250" height="95" rx="12" fill="#FF8C42"></rect>
+<text x="125" y="26" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700">CNN × 2,000회</text>
+<text x="125" y="48" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11">후보마다 각각 따로</text>
+<text x="125" y="68" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11">⚠ 매우 느림</text>
+</g>
+<path d="M 570 157 H 590" stroke="#9aa5b1" stroke-width="2" marker-end="url(#ar3)"></path>
+<g transform="translate(595,110)">
+<rect width="250" height="95" rx="12" fill="#FDEEE1" stroke="#F3B583" stroke-width="1.5"></rect>
+<text x="125" y="26" text-anchor="middle" fill="#0B3D59" font-family="sans-serif" font-size="13" font-weight="700">분류 + 박스 회귀</text>
+<text x="125" y="48" text-anchor="middle" fill="#0B3D59" font-family="sans-serif" font-size="11">SVM + 별도 선형 회귀 모델</text>
+<text x="125" y="68" text-anchor="middle" fill="#0B3D59" font-family="sans-serif" font-size="11">(RoI 풀링 없음 — 개별 워핑)</text>
+</g>
+
+<!-- Row 2: Fast R-CNN -->
+<text x="34" y="238" fill="#0f172a" font-family="sans-serif" font-size="14" font-weight="700">Fast R-CNN</text>
+<g transform="translate(35,248)">
+<rect width="180" height="95" rx="12" fill="#00B0F0"></rect>
+<text x="90" y="26" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700">CNN × 1회</text>
+<text x="90" y="48" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11">특징 지도 생성</text>
+</g>
+<path d="M 220 295 H 240" stroke="#9aa5b1" stroke-width="2" marker-end="url(#ar3)"></path>
+<g transform="translate(245,248)">
+<rect width="180" height="95" rx="12" fill="#FF8C42"></rect>
+<text x="90" y="26" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="700">Selective Search</text>
+<text x="90" y="48" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11">위치 그대로 사용</text>
+<text x="90" y="68" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11">⚠ 여전히 느림</text>
+</g>
+<path d="M 430 295 H 450" stroke="#9aa5b1" stroke-width="2" marker-end="url(#ar3)"></path>
+<g transform="translate(455,248)">
+<rect width="180" height="95" rx="12" fill="#0B3D59"></rect>
+<text x="90" y="26" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700">RoI 풀링</text>
+<text x="90" y="48" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11">크기 통일</text>
+</g>
+<path d="M 640 295 H 660" stroke="#9aa5b1" stroke-width="2" marker-end="url(#ar3)"></path>
+<g transform="translate(665,248)">
+<rect width="180" height="95" rx="12" fill="#FDEEE1" stroke="#F3B583" stroke-width="1.5"></rect>
+<text x="90" y="26" text-anchor="middle" fill="#0B3D59" font-family="sans-serif" font-size="13" font-weight="700">분류 + 박스</text>
+<text x="90" y="48" text-anchor="middle" fill="#0B3D59" font-family="sans-serif" font-size="11">softmax + 회귀</text>
+</g>
+
+<!-- Row 3: Faster R-CNN -->
+<text x="34" y="376" fill="#0f172a" font-family="sans-serif" font-size="14" font-weight="700">Faster R-CNN</text>
+<g transform="translate(35,386)">
+<rect width="180" height="95" rx="12" fill="#0B3D59"></rect>
+<text x="90" y="26" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700">CNN × 1회</text>
+<text x="90" y="48" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11">특징 지도 생성</text>
+</g>
+<path d="M 220 433 H 240" stroke="#9aa5b1" stroke-width="2" marker-end="url(#ar3)"></path>
+<g transform="translate(245,386)">
+<rect width="180" height="95" rx="12" fill="#00B0F0"></rect>
+<text x="90" y="26" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700">RPN (신경망)</text>
+<text x="90" y="48" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11">특징 지도 재활용</text>
+<text x="90" y="68" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11">앵커로 위치 예측</text>
+</g>
+<path d="M 430 433 H 450" stroke="#9aa5b1" stroke-width="2" marker-end="url(#ar3)"></path>
+<g transform="translate(455,386)">
+<rect width="180" height="95" rx="12" fill="#0B3D59"></rect>
+<text x="90" y="26" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700">RoI 풀링</text>
+<text x="90" y="48" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11">크기 통일</text>
+</g>
+<path d="M 640 433 H 660" stroke="#9aa5b1" stroke-width="2" marker-end="url(#ar3)"></path>
+<g transform="translate(665,386)">
+<rect width="180" height="95" rx="12" fill="#FDEEE1" stroke="#F3B583" stroke-width="1.5"></rect>
+<text x="90" y="26" text-anchor="middle" fill="#0B3D59" font-family="sans-serif" font-size="13" font-weight="700">분류 + 박스</text>
+<text x="90" y="48" text-anchor="middle" fill="#0B3D59" font-family="sans-serif" font-size="11">softmax + 회귀</text>
+</g>
+
+<!-- bottom conclusion bar -->
+<rect x="30" y="495" width="820" height="36" rx="9" fill="#E4ECF0" stroke="#B8CDDC"></rect>
+<text x="440" y="518" text-anchor="middle" fill="#0B3D59" font-family="sans-serif" font-size="13" font-weight="600">결국 매번 가장 느린 부분을 신경망으로 바꿔, 속도를 개선해 온 과정입니다.</text>
+</svg>
